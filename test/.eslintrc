@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "mocha/test",
+	"../.eslintrc"
+  ]
+}

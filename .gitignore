@@ -1,0 +1,11 @@
+node_modules
+doc
+dist
+.DS_Store
+package.json.save
+package-lock.json
+yarn.lock
+
+\#*#
+
+.vscode

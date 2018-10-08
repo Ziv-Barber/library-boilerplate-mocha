@@ -1,0 +1,9 @@
+node_modules
+flow-typed
+dist
+doc
+.DS_Store
+
+\#*#
+
+.vscode

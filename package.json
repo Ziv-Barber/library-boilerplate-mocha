@@ -1,0 +1,119 @@
+{
+  "name": "library-boilerplate-mocha",
+  "version": "0.0.0-semantic-release",
+  "description": "Rollup based javascript library boilerplate + babel 7, eslint, flow, jest, esdoc and live editing.",
+  "scripts": {
+    "start": "better-npm-run start",
+    "test": "better-npm-run test",
+    "pretest": "npx run-s clean build",
+    "build": "npx rollup -c --environment BUILD:production",
+    "clean": "npx rimraf dist doc",
+    "commit": "npx git-cz",
+    "dev": "npx rollup -c --environment BUILD:development",
+    "dev:watch": "npx rollup -c --environment BUILD:development -w",
+    "esdoc": "npx esdoc",
+    "flow": "npx flow",
+    "lint": "better-npm-run lint",
+    "release": "npx run-s release:check release:sr",
+    "release:check": "npx run-s test flow lint",
+    "release:sr": "npx semantic-release"
+  },
+  "keywords": [
+    "boilerplate",
+    "starter",
+    "kit",
+    "starter kit",
+    "template",
+    "quickstart",
+    "library",
+    "javascript",
+    "babel",
+    "eslint",
+    "esdoc",
+    "jest",
+    "webpack",
+    "commitizen"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "better-npm-run": "^0.1.1",
+    "chai": "^4.1.2",
+    "commitizen": "^3.0.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "esdoc": "^1.1.0",
+    "esdoc-brand-plugin": "^1.0.1",
+    "esdoc-flow-type-plugin": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.6.1",
+    "eslint-config-mocha": "^0.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^2.47.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-mocha-only": "^0.0.3",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "flow-bin": "^0.82.0",
+    "flow-typed": "^2.4.0",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.4",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "semantic-release": "^15.9.17",
+    "sinon": "^6.1.0"
+  },
+  "author": "Ziv Barber",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "browser": "dist/library-boilerplate-mocha.iife.js",
+  "amd": "dist/library-boilerplate-mocha.amd.js",
+  "main": "dist/library-boilerplate-mocha.cjs.js",
+  "module": "dist/library-boilerplate-mocha.esm.js",
+  "betterScripts": {
+    "start": {
+      "command": "npx babel-node lib/index.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "lint": {
+      "command": "npx eslint **/*.js",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "test": {
+      "command": "npx mocha --compilers js:@babel/register --require @babel/polyfill test",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "release": {
+    "prepare": [],
+    "publish": [
+      "@semantic-release/github"
+    ],
+    "npmPublish": false,
+    "verifyConditions": [
+      "@semantic-release/github"
+    ]
+  }
+}
