@@ -4,9 +4,12 @@
     "standard",
     "plugin:flowtype/recommended"
   ],
-  "rules": {},
+  "rules": {
+  },
   "parserOptions": {},
   "plugins": [
     "flowtype"
-  ]
+  ],
+  "settings": {
+  }
 }

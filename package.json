@@ -94,7 +94,7 @@
       }
     },
     "lint": {
-      "command": "npx eslint **/*.js",
+      "command": "npx eslint \"**/*.js\"",
       "env": {
         "NODE_ENV": "development"
       }
